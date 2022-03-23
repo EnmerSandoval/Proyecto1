@@ -170,10 +170,10 @@ public class Util {
                             System.out.println("Case 2 " + mosquito);
                             break;           
                             case 3:
-                            System.out.println("Case 3" + grillo);
+                            System.out.println("Case 3 " + grillo);
                             break; 
                             case 4:
-                            System.out.println("Case 4" + castor);
+                            System.out.println("Case 4 " + castor);
                             break; 
                             case 5:
                             System.out.println("case 5 " +caballo);
