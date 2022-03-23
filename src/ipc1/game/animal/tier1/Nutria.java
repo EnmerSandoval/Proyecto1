@@ -3,6 +3,9 @@ package ipc1.game.animal.tier1;
 import ipc1.game.animal.Animal;
 
 public class Nutria extends Animal {
+    public Nutria(){
+        super(6, "Nutria", 1, 2);
+    }
     public Nutria(int id, String nombreAnimal, int ataque, int vida){
         super(6, "Nutria", 1, 2);
     }
