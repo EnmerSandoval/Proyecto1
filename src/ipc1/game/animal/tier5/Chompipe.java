@@ -6,4 +6,8 @@ public class Chompipe extends Animal {
     public Chompipe(int id, String nombreAnimal, int ataque, int vida){
         super(42, "Chompipe", 3, 4);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 4;
+  }
 }

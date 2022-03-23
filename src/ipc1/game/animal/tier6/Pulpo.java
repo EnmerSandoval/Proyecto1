@@ -6,4 +6,8 @@ public class Pulpo extends Animal {
     public Pulpo(int id, String nombreAnimal, int ataque, int vida){
         super(51, "Pulpo", 8, 8);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 8;
+  }
 }

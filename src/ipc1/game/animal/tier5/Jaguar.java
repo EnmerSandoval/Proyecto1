@@ -6,4 +6,8 @@ public class Jaguar extends Animal{
     public Jaguar(int id, String nombreAnimal, int ataque, int vida){
         super(36, "Jaguar", 7, 4);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 4;
+  }
 }

@@ -6,4 +6,8 @@ public class Mapache extends Animal {
     public Mapache(int id, String nombreAnimal, int ataque, int vida){
         super(17, "Mapache", 5, 4);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 4;
+  }
 }

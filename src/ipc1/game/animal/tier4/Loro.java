@@ -6,4 +6,8 @@ public class Loro extends Animal {
     public Loro(int id, String nombreAnimal, int ataque, int vida){
         super(28,"Loro", 5, 3);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 3;
+  }
 }

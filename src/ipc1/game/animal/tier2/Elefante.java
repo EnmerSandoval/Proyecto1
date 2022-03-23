@@ -6,4 +6,9 @@ public class Elefante extends Animal {
     public Elefante(int id, String nombreAnimal, int ataque, int vida){
         super(10, "Elefante", 3, 5);
     }
+
+    @Override
+  public int getModDefense(Animal vida){
+      return 5;
+  }
 }

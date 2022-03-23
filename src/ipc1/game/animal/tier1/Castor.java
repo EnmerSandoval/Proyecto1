@@ -6,4 +6,9 @@ public class Castor extends Animal {
     public Castor(int id, String nombreAnimal, int ataque, int vida){
         super(4, "Castor", 2, 2);
     }
+
+    @Override
+  public int getModDefense(Animal vida){
+      return 2;
+  }
 }

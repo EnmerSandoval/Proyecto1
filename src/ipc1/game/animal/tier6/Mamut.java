@@ -6,4 +6,8 @@ public class Mamut extends Animal {
     public Mamut(int id, String nombreAnimal, int ataque, int vida){
         super(47, "Mamut", 3, 10);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 10;
+  }
 }

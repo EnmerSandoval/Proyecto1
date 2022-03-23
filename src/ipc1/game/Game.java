@@ -1,12 +1,15 @@
 package ipc1.game;
 
-import ipc1.game.animal.Animal;
 import ipc1.game.animal.tier1.*;
+import ipc1.game.animal.tier5.Mono;
 
-class Game {
+ public class Game {
     public static void main(String[] args) {
-        Animal perro = new Caballo(0, "Caballo", 5, 4);
-        System.out.println();
-
-    }
+        Caballo castor = new Caballo();
+        System.out.println(castor); 
+        Mono p2 = new Mono(0,"mono",0,0);
+        System.out.println(p2);
+        
+        
+    } 
 }

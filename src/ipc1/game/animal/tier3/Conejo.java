@@ -6,4 +6,8 @@ public class Conejo extends Animal {
     public Conejo(int id, String nombreAnimal, int ataque, int vida){
         super(22, "Conejo", 3, 2);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 2;
+  }
 }

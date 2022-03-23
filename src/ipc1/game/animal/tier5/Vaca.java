@@ -6,4 +6,8 @@ public class Vaca extends Animal {
     public Vaca(int id, String nombreAnimal, int ataque, int vida){
         super(41, "Vaca", 4, 6);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 6;
+  }
 }

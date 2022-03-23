@@ -6,4 +6,8 @@ public class Camello extends Animal {
     public Camello(int id, String nombreAnimal, int ataque, int vida){
         super(16,"Camello", 2, 5);
     }
+    @Override
+  public int getModDefense(Animal vida){
+      return 5;
+  }
 }
