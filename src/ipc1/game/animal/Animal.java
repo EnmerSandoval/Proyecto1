@@ -32,12 +32,29 @@ public abstract class Animal {
 
    public void attack(Animal p2){
         System.out.println("*****INICIA LA PELEA*****");
+        System.out.println();
         System.out.println("        "+this.getNombreAnimal()+" ataca a "+p2.getNombreAnimal());
-        
+        System.out.println();
+        System.out.println("*Musica de suspenso* *Sonidos de golpes*");
+        System.out.println();
+        int amount = p2.getVida() - this.getAtaque();
+        System.out.println("Ataque de: " + this.nombreAnimal);
+        p2.defense(this, amount);
+
+        System.out.println("Termino el ataque.");
+        System.out.println("Atacante: "+this.toString());
+        System.out.println("Defensor: "+p2.toString());
    }
 
    public void defense(Animal p1, int attack){
-        System.out.println("HI");
+            if (this.getAtaque() > 0){
+                this.vida -= getVida() - getAtaque();
+            }
+
+    System.out.println("El ataque de: "+p1.getNombreAnimal()+" fue exitoso y "+this.getNombreAnimal()+" recibio daño y termino con  de vida");
+
+    System.out.println(this.getNombreAnimal()+" se defiende de " +p1.getNombreAnimal());
+
    }
 
    // public void attack(Animal p2){

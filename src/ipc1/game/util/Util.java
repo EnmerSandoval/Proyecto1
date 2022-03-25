@@ -10,18 +10,21 @@ import ipc1.game.animal.tier5.*;
 import ipc1.game.animal.tier6.*;
 import ipc1.game.animal.tier7.*;
 // import ipc1.game.animal.Animal;
+// Investigar sobre la interfaz clone. 
 
 public class Util {
-
+    public static Scanner scanner = new Scanner(System.in);
+    public static Random random = new Random();
+    
     //Animales de Tier1
-    public static Hormiga hormiga = new Hormiga();
-    public static Pescado pescado = new Pescado();        
-    public static Mosquito mosquito = new Mosquito();
-    public static Grillo grillo = new Grillo();
-    public static Castor castor = new Castor();
-    public static Caballo caballo = new Caballo();
-    public static Nutria nutria = new Nutria();
-    public static Escarabajo escarabajo = new Escarabajo();
+    Hormiga hormiga = new Hormiga();
+    Pescado pescado = new Pescado();
+    Mosquito mosquito = new Mosquito();
+    Grillo grillo = new Grillo();
+    Castor castor = new Castor();
+    Caballo caballo = new Caballo();
+    Nutria nutria = new Nutria();
+    Escarabajo escarabajo = new Escarabajo();
 
     //Animales de Tier2
     Aranya aranya = new Aranya();
@@ -93,8 +96,6 @@ public class Util {
         escarabajo.getId();
     } */
 
-    public static Scanner scanner = new Scanner(System.in);
-    public static Random random = new Random();
 
     public static int generarNumeroRandom(int min, int max) {
         // int tmp = random.nextInt(max-min)+min;
@@ -152,43 +153,4 @@ public class Util {
 
         return respuesta;
     }
-
-    public static int generarEquipoTier1(){
-        int tmp = 0;
-        for (int i = 0; i <=2; i++) {
-            tmp = generarNumeroRandom(0, 7);
-               
-             switch (tmp) {
-                    case 0:
-                    System.out.println("case 0 " + hormiga);    
-                    //return hormiga;
-                            break;          
-                            case 1:
-                            System.out.println("Case 1 " + pescado);
-                            break;           
-                            case 2:
-                            System.out.println("Case 2 " + mosquito);
-                            break;           
-                            case 3:
-                            System.out.println("Case 3 " + grillo);
-                            break; 
-                            case 4:
-                            System.out.println("Case 4 " + castor);
-                            break; 
-                            case 5:
-                            System.out.println("case 5 " +caballo);
-                            break; 
-                            case 6:
-                            System.out.println("case 6 " + nutria);
-                            break; 
-                            case 7:
-                            System.out.println("case 7 " +escarabajo);          
-                            break; 
-                    }
-        }
-        
-        return tmp;
-    }
-
-
 }
