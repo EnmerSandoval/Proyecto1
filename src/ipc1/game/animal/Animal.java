@@ -5,7 +5,6 @@ public abstract class Animal implements Cloneable{
     private String nombreAnimal;
     private int ataque, vida, id;
 
-    Animal[] arreglo = new Animal[54];
 
     public Animal(){
         
@@ -18,9 +17,7 @@ public abstract class Animal implements Cloneable{
         this.vida = vida;
 
     }
-
-
-    
+ 
     
     abstract public int getModDefense(Animal ataque);
    
@@ -43,23 +40,28 @@ public abstract class Animal implements Cloneable{
         System.out.println();
         System.out.println("*Musica de suspenso* *Sonidos de golpes*");
         System.out.println();
-        int amount = p2.getVida() - this.getAtaque();
         System.out.println("Ataque de: " + this.nombreAnimal);
-        p2.defense(this, amount);
+        p2.setVida(p2.getVida() - this.getAtaque());
+        p2.defense(this);
+
+        if (p2.getVida() == 0){
+            System.out.println("el animal murio" +p2.getNombreAnimal());
+        }
 
         System.out.println("Termino el ataque.");
         System.out.println("Atacante: "+this.toString());
         System.out.println("Defensor: "+p2.toString());
    }
 
-   public void defense(Animal p1, int attack){
-            if (this.getAtaque() > 0){
-                this.vida -= getVida() - getAtaque();
-            }
+   public void defense(Animal p1){
+            
 
     System.out.println("El ataque de: "+p1.getNombreAnimal()+" fue exitoso y "+this.getNombreAnimal()+" recibio daño y termino con  de vida");
 
     System.out.println(this.getNombreAnimal()+" se defiende de " +p1.getNombreAnimal());
+    if (p1.getVida() >= 0){
+        System.out.println("el animal murio" +p1.getNombreAnimal());
+    }
 
    }
 

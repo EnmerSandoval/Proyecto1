@@ -19,6 +19,8 @@ public class Menu {
         Util.solicitarNumero("Ingrese la opcion que desea.", 1, 4);
         Caballo p1 = new Caballo();
         Castor p2 = new Castor();
+        System.out.println(p1);
+        System.out.println(p2);
         p1.attack(p2);
         p2.attack(p1);
     }
