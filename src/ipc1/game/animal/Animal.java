@@ -1,9 +1,12 @@
 package ipc1.game.animal;
 
 
-public abstract class Animal {
+public abstract class Animal implements Cloneable{
     private String nombreAnimal;
     private int ataque, vida, id;
+
+    Animal[] arreglo = new Animal[54];
+
     public Animal(){
         
     }
@@ -15,6 +18,9 @@ public abstract class Animal {
         this.vida = vida;
 
     }
+
+
+    
     
     abstract public int getModDefense(Animal ataque);
    
