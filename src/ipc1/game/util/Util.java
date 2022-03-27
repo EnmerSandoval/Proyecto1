@@ -10,7 +10,8 @@ import ipc1.game.animal.tier4.*;
 import ipc1.game.animal.tier5.*;
 import ipc1.game.animal.tier6.*;
 import ipc1.game.animal.tier7.*;
-// import ipc1.game.animal.Animal;
+
+
 // Investigar sobre la interfaz clone. 
 
 public class Util {
@@ -18,11 +19,11 @@ public class Util {
     public static Random random = new Random();
 
 
-    
-   Animal[] arreglo = new Animal[54];
 
-   Animal[] = new Animal[] 
-   {
+    public static Animal arreglo[] = new Animal[54];
+
+     
+    public  static Animal jaula[] = new Animal[]{
     arreglo[0] = new Hormiga(),arreglo[1] = new Pescado(), arreglo[2] = new Mosquito(), arreglo[3] = new Grillo(), arreglo[4] = new Castor(), arreglo[5] = new Caballo(),
     arreglo[6] = new Nutria(), arreglo[7] = new Escarabajo(), arreglo[8] = new Sapo(), arreglo[9] = new Dodo(), arreglo[10] = new Elefante(), arreglo[11] = new PuercoEspin(),
     arreglo[12] = new PavoReal(), arreglo[13] = new Rata(), arreglo[14] = new Zorro(), arreglo[15] = new Aranya(), arreglo[16] = new Camello(), arreglo[17] = new Mapache(),
@@ -32,10 +33,15 @@ public class Util {
     arreglo[36] = new Jaguar(), arreglo[37] = new Escorpion(), arreglo[38] = new Rinoceronte(), arreglo[39] = new Mono(), arreglo[40] = new Cocodrilo(), arreglo[41] = new Vaca(), 
     arreglo[42] = new Chompipe(), arreglo[43] = new Panda(), arreglo[44] = new Gato(), arreglo[45] = new Tigre(), arreglo[46] = new Serpiente(), arreglo[47] = new Mamut(), 
     arreglo[48] = new Leopardo(), arreglo[49] = new Gorilla(), arreglo[50] = new Pulpo(), arreglo[51] = new Mosca(), arreglo[52] = new Quetzal(), arreglo[53] = new Camaleon()
-};
+    };
     
     
-    //Animales de Tier1
+    
+    
+    
+
+    
+//Animales de Tier1
     Hormiga hormiga = new Hormiga();
     Pescado pescado = new Pescado();
     Mosquito mosquito = new Mosquito();
@@ -115,6 +121,20 @@ public class Util {
         escarabajo.getId();
     } */
 
+    public static void generarJaula(){
+        int numrandom1 = 0;
+                    for (int j = 0; j < 3; j++) {
+                        numrandom1 = Util.generarNumeroRandom(0, 7);
+                        for (int i = 0; i < Util.jaula.length; i++) {
+                            if(numrandom1 == i){
+            
+                                System.out.println("El animal es" + Util.jaula[i]);
+                            }
+                        }
+                    }
+    }
+
+
 
     public static int generarNumeroRandom(int min, int max) {
         // int tmp = random.nextInt(max-min)+min;
@@ -172,6 +192,8 @@ public class Util {
 
         return respuesta;
     }
+
+    
 
 
 }
