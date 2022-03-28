@@ -18,8 +18,9 @@ public class Util {
     public static Scanner scanner = new Scanner(System.in);
     public static Random random = new Random();
 
-
-
+    
+    public static Animal jaulaPlayer[] = new Animal[5];    
+    public static Animal jaulaTemporal[] = new Animal[5];
     public static Animal arreglo[] = new Animal[54];
 
      
@@ -121,17 +122,356 @@ public class Util {
         escarabajo.getId();
     } */
 
-    public static void generarJaula(){
+    public static void generarJaula(int rondas){
         int numrandom1 = 0;
-                    for (int j = 0; j < 3; j++) {
-                        numrandom1 = Util.generarNumeroRandom(0, 7);
-                        for (int i = 0; i < Util.jaula.length; i++) {
-                            if(numrandom1 == i){
-            
-                                System.out.println("El animal es" + Util.jaula[i]);
+                            if (rondas < 4) {
+                               
+                                    switch (rondas) {
+                                        case 1:
+                                        for (int j = 0; j < 3; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 7);
+                                            for (int k = 0; k < Util.jaula.length; k++) {
+                                                if(numrandom1 == k){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[k];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[k];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[k];
+                                                        break;
+                                                    }                          
+                                                }
+                                            }
+                                        }
+                                        break;
+                                        case 2:
+                                        for (int j = 0; j < 3; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 15);
+                                            for (int k = 0; k < Util.jaula.length; k++) {
+                                                if(numrandom1 == k){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[k];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[k];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[k];
+                                                        break;
+                                                    }                          
+                                                }
+                                            }
+                                        }
+                                        break;
+                                        case 3:
+                                        for (int j = 0; j < 3; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 15);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                    }                          
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    }
                             }
-                        }
+
+                            //Si la ronda es mayor que 4 y menos que 7 generar 4 animales aleatorios en tienda
+                            if (rondas > 4 && rondas < 7){
+                                
+                                    switch (rondas) {
+                                        case 4:
+                                        for (int j = 0; j < 4; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 26);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;
+                                                    }                          
+                                                }
+                                            }
+                
+                                        }
+                                        break;
+                                        case 5:
+                                        for (int j = 0; j < 4; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 26);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;
+                                                    }                          
+                                                }
+                                            }
+                
+                                        }
+                                        break;
+                                        case 6:
+                                        for (int j = 0; j < 4; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 34);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;
+                                                    }                          
+                                                }
+                                            }
+                
+                                        }
+                                        break;
+                                    }
+                                }    
+                            
+
+                            if (rondas >= 7) {
+                                    switch (rondas){
+                                        case 7:
+                                        for (int j = 0; j < 5; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 34);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;                
+                                                        case 4:
+                                                            Util.jaulaTemporal[3] = jaula[i];                           
+                                                        break;                
+                                                    }
+                                                }
+                                             }
+                                        }
+                                        break;
+                                        case 8:
+                                        for (int j = 0; j < 5; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 42);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;                
+                                                        case 4:
+                                                            Util.jaulaTemporal[3] = jaula[i];                           
+                                                        break;                
+                                                    }
+                                                }
+                                             }
+                                        }
+                                        break;
+                                        case 9:
+                                        for (int j = 0; j < 5; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 42);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;                
+                                                        case 4:
+                                                            Util.jaulaTemporal[3] = jaula[i];                           
+                                                        break;                
+                                                    }
+                                                }
+                                             }
+                                        }
+                                        break;
+                                        case 10:
+                                        for (int j = 0; j < 5; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 51);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;                
+                                                        case 4:
+                                                            Util.jaulaTemporal[3] = jaula[i];                           
+                                                        break;                
+                                                    }
+                                                }
+                                             }
+                                        }
+                                        break;
+                                        case 11:
+                                        for (int j = 0; j < 5; j++) {
+                                            numrandom1 = Util.generarNumeroRandom(0, 51);
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;                
+                                                        case 4:
+                                                            Util.jaulaTemporal[3] = jaula[i];                           
+                                                        break;                
+                                                    }
+                                                }
+                                             }
+                                        }
+                                        break;
+                                        case 12:
+                                        numrandom1 = Util.generarNumeroRandom(0, 53);
+                                        for (int j = 0; j < 5; j++) {
+                                            for (int i = 0; i < Util.jaula.length; i++) {
+                                                if(numrandom1 == i){
+                                                    switch (j) {
+                                                        case 0:
+                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                        break;
+                                                        case 1:
+                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                        break;
+                                                        case 2:
+                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                        break;
+                                                        case 3:
+                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                        break;                
+                                                        case 4:
+                                                            Util.jaulaTemporal[3] = jaula[i];                           
+                                                        break;                
+                                                    }
+                                                }
+                                             }
+                                        }
+                                        break;
+                                    }
+                                
+                            }
+                            
+                        
+                        
+                            
+        
+
+                    for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                        System.out.println(i +" "+jaulaTemporal[i]);
                     }
+    }
+
+    public static void compraAnimales(){
+        int rol = Util.solicitarNumero("0 = no, 1 = si", 0, 1);
+        do {
+            if (rol == 1) {
+                int compra = Util.solicitarNumero("Conforme al numero de animal generado lo puede comprar", 0, 2);
+                for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                    switch (compra) {
+                        case 0:
+                        Util.jaulaPlayer[0] = Util.jaulaTemporal[0];
+                        break;
+                        case 1:
+                        Util.jaulaPlayer[1] = Util.jaulaTemporal[1];
+                        break;
+                        case 2:
+                        Util.jaulaPlayer[2] = Util.jaulaTemporal[2];
+                        break;
+                    }
+            
+                }
+                for (int j = 0; j < Util.jaulaPlayer.length; j++) {
+                    System.out.println("Tu equipo es: "+ Util.jaulaPlayer[j]);
+                }
+            } else{ 
+                for (int k = 0; k < Util.jaulaPlayer.length; k++) {
+                    System.out.println("Tu equipo es: "+ Util.jaulaPlayer[k]);
+                }
+            }
+        } while (rol != 0);
+                             
+        
     }
 
 
@@ -192,8 +532,5 @@ public class Util {
 
         return respuesta;
     }
-
-    
-
 
 }

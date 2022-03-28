@@ -1,6 +1,7 @@
-package ipc1.game;
+package ipc1.game.gameMechanism;
 
 import ipc1.game.util.*;
+import ipc1.game.Game;
 // import ipc1.game.animal.Animal;
 import ipc1.game.animal.tier1.*;
 // import ipc1.game.animal.tier2.*;

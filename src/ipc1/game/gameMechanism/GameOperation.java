@@ -1,4 +1,4 @@
-package ipc1.game;
+package ipc1.game.gameMechanism;
 
 public class GameOperation {
     public GameOperation(){
