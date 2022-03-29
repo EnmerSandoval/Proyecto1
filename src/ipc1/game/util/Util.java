@@ -21,6 +21,8 @@ public class Util {
     
     public static Animal jaulaPlayer[] = new Animal[5];    
     public static Animal jaulaTemporal[] = new Animal[5];
+    public static Animal jaulaTemporal3[] = new Animal[3];
+    public static Animal jaulaTemporal4[] = new Animal[4];
     public static Animal arreglo[] = new Animal[54];
 
      
@@ -134,17 +136,20 @@ public class Util {
                                                 if(numrandom1 == k){
                                                     switch (j) {
                                                         case 0:
-                                                            Util.jaulaTemporal[0] = jaula[k];
+                                                            Util.jaulaTemporal3[0] = jaula[k];
                                                         break;
                                                         case 1:
-                                                            Util.jaulaTemporal[1] = jaula[k];
+                                                            Util.jaulaTemporal3[1] = jaula[k];
                                                         break;
                                                         case 2:
-                                                            Util.jaulaTemporal[2] = jaula[k];
+                                                            Util.jaulaTemporal3[2] = jaula[k];
                                                         break;
                                                     }                          
                                                 }
                                             }
+                                        }
+                                        for (int i = 0; i < Util.jaulaTemporal3.length; i++) {
+                                            System.out.println(i +"estoy en jaula temporal 1"+jaulaTemporal3[i]);
                                         }
                                         break;
                                         case 2:
@@ -154,17 +159,20 @@ public class Util {
                                                 if(numrandom1 == k){
                                                     switch (j) {
                                                         case 0:
-                                                            Util.jaulaTemporal[0] = jaula[k];
+                                                            Util.jaulaTemporal3[0] = jaula[k];
                                                         break;
                                                         case 1:
-                                                            Util.jaulaTemporal[1] = jaula[k];
+                                                            Util.jaulaTemporal3[1] = jaula[k];
                                                         break;
                                                         case 2:
-                                                            Util.jaulaTemporal[2] = jaula[k];
+                                                            Util.jaulaTemporal3[2] = jaula[k];
                                                         break;
                                                     }                          
                                                 }
                                             }
+                                        }
+                                        for (int i = 0; i < Util.jaulaTemporal3.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal3[i]);
                                         }
                                         break;
                                         case 3:
@@ -174,21 +182,26 @@ public class Util {
                                                 if(numrandom1 == i){
                                                     switch (j) {
                                                         case 0:
-                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                            Util.jaulaTemporal3[0] = jaula[i];
                                                         break;
                                                         case 1:
-                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                            Util.jaulaTemporal3[1] = jaula[i];
                                                         break;
                                                         case 2:
-                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                            Util.jaulaTemporal3[2] = jaula[i];
                                                         break;
                                                     }                          
                                                 }
                                             }
                                         }
+                                        for (int i = 0; i < Util.jaulaTemporal3.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal3[i]);
+                                        }
                                         break;
                                     }
+                                    
                             }
+                            
 
                             //Si la ronda es mayor que 4 y menos que 7 generar 4 animales aleatorios en tienda
                             if (rondas > 4 && rondas < 7){
@@ -201,21 +214,24 @@ public class Util {
                                                 if(numrandom1 == i){
                                                     switch (j) {
                                                         case 0:
-                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                            Util.jaulaTemporal4[0] = jaula[i];
                                                         break;
                                                         case 1:
-                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                            Util.jaulaTemporal4[1] = jaula[i];
                                                         break;
                                                         case 2:
-                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                            Util.jaulaTemporal4[2] = jaula[i];
                                                         break;
                                                         case 3:
-                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                            Util.jaulaTemporal4[3] = jaula[i];
                                                         break;
                                                     }                          
                                                 }
                                             }
                 
+                                        }
+                                        for (int i = 0; i < Util.jaulaTemporal4.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal4[i]);
                                         }
                                         break;
                                         case 5:
@@ -225,21 +241,24 @@ public class Util {
                                                 if(numrandom1 == i){
                                                     switch (j) {
                                                         case 0:
-                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                            Util.jaulaTemporal4[0] = jaula[i];
                                                         break;
                                                         case 1:
-                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                            Util.jaulaTemporal4[1] = jaula[i];
                                                         break;
                                                         case 2:
-                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                            Util.jaulaTemporal4[2] = jaula[i];
                                                         break;
                                                         case 3:
-                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                            Util.jaulaTemporal4[3] = jaula[i];
                                                         break;
                                                     }                          
                                                 }
                                             }
                 
+                                        }
+                                        for (int i = 0; i < Util.jaulaTemporal4.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal4[i]);
                                         }
                                         break;
                                         case 6:
@@ -249,26 +268,28 @@ public class Util {
                                                 if(numrandom1 == i){
                                                     switch (j) {
                                                         case 0:
-                                                            Util.jaulaTemporal[0] = jaula[i];
+                                                            Util.jaulaTemporal4[0] = jaula[i];
                                                         break;
                                                         case 1:
-                                                            Util.jaulaTemporal[1] = jaula[i];
+                                                            Util.jaulaTemporal4[1] = jaula[i];
                                                         break;
                                                         case 2:
-                                                            Util.jaulaTemporal[2] = jaula[i];
+                                                            Util.jaulaTemporal4[2] = jaula[i];
                                                         break;
                                                         case 3:
-                                                            Util.jaulaTemporal[3] = jaula[i];
+                                                            Util.jaulaTemporal4[3] = jaula[i];
                                                         break;
                                                     }                          
                                                 }
                                             }
                 
                                         }
+                                        for (int i = 0; i < Util.jaulaTemporal4.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal4[i]);
+                                        }
                                         break;
                                     }
                                 }    
-                            
 
                             if (rondas >= 7) {
                                     switch (rondas){
@@ -297,6 +318,9 @@ public class Util {
                                                 }
                                              }
                                         }
+                                        for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal[i]);
+                                        }
                                         break;
                                         case 8:
                                         for (int j = 0; j < 5; j++) {
@@ -322,6 +346,9 @@ public class Util {
                                                     }
                                                 }
                                              }
+                                        }
+                                        for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal[i]);
                                         }
                                         break;
                                         case 9:
@@ -349,6 +376,9 @@ public class Util {
                                                 }
                                              }
                                         }
+                                        for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal[i]);
+                                        }
                                         break;
                                         case 10:
                                         for (int j = 0; j < 5; j++) {
@@ -374,6 +404,9 @@ public class Util {
                                                     }
                                                 }
                                              }
+                                        }
+                                        for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal[i]);
                                         }
                                         break;
                                         case 11:
@@ -401,6 +434,9 @@ public class Util {
                                                 }
                                              }
                                         }
+                                        for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal[i]);
+                                        }
                                         break;
                                         case 12:
                                         numrandom1 = Util.generarNumeroRandom(0, 53);
@@ -427,54 +463,38 @@ public class Util {
                                                 }
                                              }
                                         }
+                                        for (int i = 0; i < Util.jaulaTemporal.length; i++) {
+                                            System.out.println(i +" "+jaulaTemporal[i]);
+                                        }
                                         break;
                                     }
                                 
-                            }
-                            
-                        
-                        
-                            
-        
-
-                    for (int i = 0; i < Util.jaulaTemporal.length; i++) {
-                        System.out.println(i +" "+jaulaTemporal[i]);
-                    }
+                                }
     }
 
     public static void compraAnimales(){
         int rol = Util.solicitarNumero("0 = no, 1 = si", 0, 1);
-        do {
-            if (rol == 1) {
-                int compra = Util.solicitarNumero("Conforme al numero de animal generado lo puede comprar", 0, 2);
-                for (int i = 0; i < Util.jaulaTemporal.length; i++) {
-                    switch (compra) {
-                        case 0:
-                        Util.jaulaPlayer[0] = Util.jaulaTemporal[0];
-                        break;
-                        case 1:
-                        Util.jaulaPlayer[1] = Util.jaulaTemporal[1];
-                        break;
-                        case 2:
-                        Util.jaulaPlayer[2] = Util.jaulaTemporal[2];
-                        break;
-                    }
-            
-                }
-                for (int j = 0; j < Util.jaulaPlayer.length; j++) {
-                    System.out.println("Tu equipo es: "+ Util.jaulaPlayer[j]);
-                }
-            } else{ 
-                for (int k = 0; k < Util.jaulaPlayer.length; k++) {
-                    System.out.println("Tu equipo es: "+ Util.jaulaPlayer[k]);
+        if (rol == 1){
+            int seleccion = Util.solicitarNumero("Que animal desea comprar indique el animal conforme al indice que se le dio", 0, 3);
+            for (int i = 0; i < jaulaPlayer.length; i++) {
+                for (int j = 0; j < jaulaTemporal3.length; j++) {
+                        if (seleccion == j) {
+                            if(jaulaPlayer[i] == null){
+                                jaulaPlayer[i] = jaulaTemporal3[0]; 
+                            }
+                        }
                 }
             }
-        } while (rol != 0);
-                             
+            for (int i = 0; i < arreglo.length; i++) {
+                System.out.println("Su equipo es: "+jaulaPlayer[i]);
+            }
+        } else {
+            for (int i = 0; i < jaulaPlayer.length; i++) {    
+                System.out.println("Su equipo es: "+jaulaPlayer[i]);
+            }
+        }                  
         
     }
-
-
 
     public static int generarNumeroRandom(int min, int max) {
         // int tmp = random.nextInt(max-min)+min;
