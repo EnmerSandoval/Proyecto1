@@ -4,10 +4,10 @@ import ipc1.game.animal.Animal;
 
 public class Elefante extends Animal {
     public Elefante(){
-        super(10, "Elefante", 3, 5);
+        super(10, "Elefante", 3, 5, true);
     }
-    public Elefante(int id, String nombreAnimal, int ataque, int vida){
-        super(10, "Elefante", 3, 5);
+    public Elefante(int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
+        super(10, "Elefante", 3, 5, true);
     }
 
     @Override

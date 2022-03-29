@@ -4,10 +4,10 @@ import ipc1.game.animal.Animal;
 
 public class Rata extends Animal {
     public Rata(){
-        super(13, "Rata", 4, 5);
+        super(13, "Rata", 4, 5, true);
     }
-    public Rata(int id, String nombreAnimal, int ataque, int vida){
-        super(13, "Rata", 4, 5);
+    public Rata(int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
+        super(13, "Rata", 4, 5, true);
     }
 
     @Override

@@ -3,14 +3,12 @@ package ipc1.game.gameMechanism;
 import ipc1.game.util.*;
 import ipc1.game.Game;
 // import ipc1.game.animal.Animal;
-import ipc1.game.animal.tier1.*;
 // import ipc1.game.animal.tier2.*;
 // import ipc1.game.animal.tier3.*;
 // import ipc1.game.animal.tier4.*;
 // import ipc1.game.animal.tier5.*;
 // import ipc1.game.animal.tier6.*;
 // import ipc1.game.animal.tier7.*;
-import ipc1.game.animal.tier6.Gorilla;
 
 
 

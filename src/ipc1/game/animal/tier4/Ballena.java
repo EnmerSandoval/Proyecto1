@@ -4,10 +4,10 @@ import ipc1.game.animal.Animal;
 
 public class Ballena extends Animal {
     public Ballena(){
-        super(32, "Ballena", 3, 8);
+        super(32, "Ballena", 3, 8, true);
     }
-    public Ballena(int id, String nombreAnimal, int ataque, int vida){
-        super(32, "Ballena", 3, 8);
+    public Ballena(int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
+        super(32, "Ballena", 3, 8, true);
     }
     @Override
   public int getModDefense(Animal vida){

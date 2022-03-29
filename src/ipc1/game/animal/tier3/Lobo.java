@@ -4,10 +4,10 @@ import ipc1.game.animal.Animal;
 
 public class Lobo extends Animal {
     public Lobo(){
-        super(23, "Lobo", 3, 4);
+        super(23, "Lobo", 3, 4, true);
     }
-    public Lobo(int id, String nombreAnimal, int ataque, int vida){
-        super(23, "Lobo", 3, 4);
+    public Lobo(int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
+        super(23, "Lobo", 3, 4, true);
     }
     @Override
   public int getModDefense(Animal vida){

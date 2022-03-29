@@ -11,21 +11,18 @@ import ipc1.game.animal.tier5.*;
 import ipc1.game.animal.tier6.*;
 import ipc1.game.animal.tier7.*;
 
-
-// Investigar sobre la interfaz clone. 
-
+// Investigar sobre la interfaz clone.
 public class Util {
     public static Scanner scanner = new Scanner(System.in);
     public static Random random = new Random();
 
-    
     public static Animal jaulaPlayer[] = new Animal[5];    
+    public static Animal jaulaPlayerRival[] = new Animal[5];
     public static Animal jaulaTemporal[] = new Animal[5];
     public static Animal jaulaTemporal3[] = new Animal[3];
     public static Animal jaulaTemporal4[] = new Animal[4];
     public static Animal arreglo[] = new Animal[54];
-
-     
+  
     public  static Animal jaula[] = new Animal[]{
     arreglo[0] = new Hormiga(),arreglo[1] = new Pescado(), arreglo[2] = new Mosquito(), arreglo[3] = new Grillo(), arreglo[4] = new Castor(), arreglo[5] = new Caballo(),
     arreglo[6] = new Nutria(), arreglo[7] = new Escarabajo(), arreglo[8] = new Sapo(), arreglo[9] = new Dodo(), arreglo[10] = new Elefante(), arreglo[11] = new PuercoEspin(),
@@ -37,12 +34,6 @@ public class Util {
     arreglo[42] = new Chompipe(), arreglo[43] = new Panda(), arreglo[44] = new Gato(), arreglo[45] = new Tigre(), arreglo[46] = new Serpiente(), arreglo[47] = new Mamut(), 
     arreglo[48] = new Leopardo(), arreglo[49] = new Gorilla(), arreglo[50] = new Pulpo(), arreglo[51] = new Mosca(), arreglo[52] = new Quetzal(), arreglo[53] = new Camaleon()
     };
-    
-    
-    
-    
-    
-
     
 //Animales de Tier1
     Hormiga hormiga = new Hormiga();
@@ -149,7 +140,7 @@ public class Util {
                                             }
                                         }
                                         for (int i = 0; i < Util.jaulaTemporal3.length; i++) {
-                                            System.out.println(i +"estoy en jaula temporal 1"+jaulaTemporal3[i]);
+                                            System.out.println(i+""+jaulaTemporal3[i]);
                                         }
                                         break;
                                         case 2:
@@ -473,29 +464,75 @@ public class Util {
     }
 
     public static void compraAnimales(){
+        int oro = 10;
         int rol = Util.solicitarNumero("0 = no, 1 = si", 0, 1);
-        if (rol == 1){
-            int seleccion = Util.solicitarNumero("Que animal desea comprar indique el animal conforme al indice que se le dio", 0, 3);
-            for (int i = 0; i < jaulaPlayer.length; i++) {
+            if (rol == 1){
+                int seleccion = Util.solicitarNumero("Que animal desea comprar indique el animal conforme al indice que se le dio", 0, 3);
                 for (int j = 0; j < jaulaTemporal3.length; j++) {
+                    for (int i = 0; i < jaulaPlayer.length; i++) {
                         if (seleccion == j) {
-                            if(jaulaPlayer[i] == null){
-                                jaulaPlayer[i] = jaulaTemporal3[0]; 
+                            if (jaulaPlayer[i] == null) {
+                                switch (seleccion) {
+                                    case 0:
+                                    jaulaPlayer[0] = jaulaTemporal3[0]; 
+                                    break;
+                                    case 1:
+                                    jaulaPlayer[1] = jaulaTemporal3[1]; 
+                                    System.out.println("case 1" + oro);
+                                    break;
+                                    case 2:
+                                    jaulaPlayer[2] = jaulaTemporal3[2]; 
+                                    System.out.println("Case 2" + oro);
+                                    break;                                    
+                                }
                             }
                         }
+                        
+                    }
                 }
-            }
-            for (int i = 0; i < arreglo.length; i++) {
-                System.out.println("Su equipo es: "+jaulaPlayer[i]);
-            }
+                System.out.println("case 0 " + oro);
+                System.out.println("Tiene de oro: "+oro);
+                System.out.println("Tiene de oro: " +oro);
+                for (int i = 0; i < arreglo.length; i++) {
+                    System.out.println("Su equipo es: "+jaulaPlayer[i]);
+                }
         } else {
             for (int i = 0; i < jaulaPlayer.length; i++) {    
                 System.out.println("Su equipo es: "+jaulaPlayer[i]);
             }
-        }                  
-        
+        }                   
+                                
+                
+            
     }
 
+    public static void compraAnimalesRival(){
+        int oro = 10;
+        int rol = Util.solicitarNumero("0 = no, 1 = si", 0, 1);
+        if (rol == 1){
+            do {
+                int seleccion = Util.solicitarNumero("Que animal desea comprar indique el animal conforme al indice que se le dio", 0, 3);
+                for (int i = 0; i < jaulaPlayerRival.length; i++) {
+                    for (int j = 0; j < jaulaTemporal3.length; j++) {
+                        if (seleccion == j) {
+                            if(jaulaPlayerRival[0] == null){
+                                jaulaPlayerRival[0] = jaulaTemporal3[0]; 
+                            }
+                        }
+                    }
+                }
+                oro = oro-3;
+            } while (oro >= 3);
+            System.out.println("Tiene de oro: " +oro);
+            for (int i = 0; i < arreglo.length; i++) {
+                System.out.println("Su equipo es: "+jaulaPlayerRival[i]);
+            }
+        } else {
+            for (int i = 0; i < jaulaPlayerRival.length; i++) {    
+                System.out.println("Su equipo es: "+jaulaPlayerRival[i]);
+            }
+        }                   
+    }
     public static int generarNumeroRandom(int min, int max) {
         // int tmp = random.nextInt(max-min)+min;
         // System.out.println(tmp);
