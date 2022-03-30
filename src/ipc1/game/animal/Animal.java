@@ -1,7 +1,5 @@
 package ipc1.game.animal;
 
-import ipc1.game.util.*;
-
 
 public abstract class Animal implements Cloneable{
     private String nombreAnimal;
@@ -10,7 +8,7 @@ public abstract class Animal implements Cloneable{
 
 
     public Animal(){
-        
+    
     }
 
     public Animal (int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
@@ -36,43 +34,6 @@ public abstract class Animal implements Cloneable{
         " Tiene de ataque " + getAtaque() + "'" + 
         " Y de vida tiene " + getVida() ;
    }
-
-   public void attack(Animal p2){
-        System.out.println("*****INICIA LA PELEA*****");
-        System.out.println();
-        System.out.println("*Musica de suspenso* *Sonidos de golpes*");
-        System.out.println();
-        System.out.println("Ataque de: " + this.nombreAnimal);
-        p2.setVida(p2.getVida() - this.getAtaque());
-        p2.defense(this);
-        
-        if (p2.getVida() == 0){
-            System.out.println("el animal murio" +p2.getNombreAnimal());
-        }
-        
-        System.out.println("Termino el ataque.");
-        System.out.println("Atacante: "+this.toString());
-        System.out.println("Defensor: "+p2.toString());
-    }
-    
-    public void ataque(){
-        Util.compraAnimales();
-        Util.compraAnimalesRival();
-        System.out.println("******INICIA LA PELEA*****");
-        System.out.println();
-        for (int i = 0; i < Util.jaulaPlayer.length; i++) {
-            for (int j = 0; j < Util.jaulaPlayerRival.length; j++) {
-                if (Util.jaulaPlayer[i] != null && Util.jaulaPlayerRival[j] != null){
-                    Util.jaulaPlayer[0].setVida(Util.jaulaPlayerRival[0].getAtaque() - Util.jaulaPlayer[0].getVida());
-                    if (Util.jaulaPlayer[0].getVida() < 0) {
-                        Util.jaulaPlayer[0].setVida(0);
-                    }
-                    //Atributo vivo o muerto si este animal 0 Se muere YA pasaria a la posicion de 1 del arreglo 
-                    // Boolean Cuando termine la pelea todos vivos
-                }                
-            }
-        }
-    }
 
    public void defense(Animal p1){
             

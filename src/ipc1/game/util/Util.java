@@ -21,18 +21,18 @@ public class Util {
     public static Animal jaulaTemporal[] = new Animal[5];
     public static Animal jaulaTemporal3[] = new Animal[3];
     public static Animal jaulaTemporal4[] = new Animal[4];
-    public static Animal arreglo[] = new Animal[54];
+    public static Animal principal[] = new Animal[54];
   
     public  static Animal jaula[] = new Animal[]{
-    arreglo[0] = new Hormiga(),arreglo[1] = new Pescado(), arreglo[2] = new Mosquito(), arreglo[3] = new Grillo(), arreglo[4] = new Castor(), arreglo[5] = new Caballo(),
-    arreglo[6] = new Nutria(), arreglo[7] = new Escarabajo(), arreglo[8] = new Sapo(), arreglo[9] = new Dodo(), arreglo[10] = new Elefante(), arreglo[11] = new PuercoEspin(),
-    arreglo[12] = new PavoReal(), arreglo[13] = new Rata(), arreglo[14] = new Zorro(), arreglo[15] = new Aranya(), arreglo[16] = new Camello(), arreglo[17] = new Mapache(),
-    arreglo[18] = new Jirafa(), arreglo[19] = new Tortuga(), arreglo[20] = new Caracol(), arreglo[21] = new Oveja(), arreglo[22] = new Conejo(), arreglo[23] = new Lobo(),
-    arreglo[24] = new Buey(), arreglo[25] = new Canguro(), arreglo[26] = new Buho(), arreglo[27] = new Venado(), arreglo[28] = new Loro(), arreglo[29] = new Hipopotamo(),
-    arreglo[30] = new Delfin(), arreglo[31] = new Puma(), arreglo[32] = new Ballena(), arreglo[33] = new Ardilla(), arreglo [34] = new Llama(), arreglo[35] = new Foca(),
-    arreglo[36] = new Jaguar(), arreglo[37] = new Escorpion(), arreglo[38] = new Rinoceronte(), arreglo[39] = new Mono(), arreglo[40] = new Cocodrilo(), arreglo[41] = new Vaca(), 
-    arreglo[42] = new Chompipe(), arreglo[43] = new Panda(), arreglo[44] = new Gato(), arreglo[45] = new Tigre(), arreglo[46] = new Serpiente(), arreglo[47] = new Mamut(), 
-    arreglo[48] = new Leopardo(), arreglo[49] = new Gorilla(), arreglo[50] = new Pulpo(), arreglo[51] = new Mosca(), arreglo[52] = new Quetzal(), arreglo[53] = new Camaleon()
+    principal[0] = new Hormiga(),principal[1] = new Pescado(), principal[2] = new Mosquito(), principal[3] = new Grillo(), principal[4] = new Castor(), principal[5] = new Caballo(),
+    principal[6] = new Nutria(), principal[7] = new Escarabajo(), principal[8] = new Sapo(), principal[9] = new Dodo(), principal[10] = new Elefante(), principal[11] = new PuercoEspin(),
+    principal[12] = new PavoReal(), principal[13] = new Rata(), principal[14] = new Zorro(), principal[15] = new Aranya(), principal[16] = new Camello(), principal[17] = new Mapache(),
+    principal[18] = new Jirafa(), principal[19] = new Tortuga(), principal[20] = new Caracol(), principal[21] = new Oveja(), principal[22] = new Conejo(), principal[23] = new Lobo(),
+    principal[24] = new Buey(), principal[25] = new Canguro(), principal[26] = new Buho(), principal[27] = new Venado(), principal[28] = new Loro(), principal[29] = new Hipopotamo(),
+    principal[30] = new Delfin(), principal[31] = new Puma(), principal[32] = new Ballena(), principal[33] = new Ardilla(), principal [34] = new Llama(), principal[35] = new Foca(),
+    principal[36] = new Jaguar(), principal[37] = new Escorpion(), principal[38] = new Rinoceronte(), principal[39] = new Mono(), principal[40] = new Cocodrilo(), principal[41] = new Vaca(), 
+    principal[42] = new Chompipe(), principal[43] = new Panda(), principal[44] = new Gato(), principal[45] = new Tigre(), principal[46] = new Serpiente(), principal[47] = new Mamut(), 
+    principal[48] = new Leopardo(), principal[49] = new Gorilla(), principal[50] = new Pulpo(), principal[51] = new Mosca(), principal[52] = new Quetzal(), principal[53] = new Camaleon()
     };
     
 //Animales de Tier1
@@ -332,7 +332,7 @@ public class Util {
                                                             Util.jaulaTemporal[3] = jaula[i];
                                                         break;                
                                                         case 4:
-                                                            Util.jaulaTemporal[3] = jaula[i];                           
+                                                            Util.jaulaTemporal[4] = jaula[i];                           
                                                         break;                
                                                     }
                                                 }
@@ -469,12 +469,12 @@ public class Util {
             if (rol == 1){
                 int seleccion = Util.solicitarNumero("Que animal desea comprar indique el animal conforme al indice que se le dio", 0, 3);
                 for (int j = 0; j < jaulaTemporal3.length; j++) {
-                    for (int i = 0; i < jaulaPlayer.length; i++) {
                         if (seleccion == j) {
-                            if (jaulaPlayer[i] == null) {
                                 switch (seleccion) {
                                     case 0:
-                                    jaulaPlayer[0] = jaulaTemporal3[0]; 
+                                    jaulaPlayer[0] = jaulaTemporal3[0];
+                                    System.out.println("Estamos en el case 0"); 
+                                    oro = oro - 3;
                                     break;
                                     case 1:
                                     jaulaPlayer[1] = jaulaTemporal3[1]; 
@@ -485,25 +485,21 @@ public class Util {
                                     System.out.println("Case 2" + oro);
                                     break;                                    
                                 }
-                            }
                         }
                         
-                    }
                 }
-                System.out.println("case 0 " + oro);
-                System.out.println("Tiene de oro: "+oro);
+                
+                //System.out.println("case 0 " + oro);
+                //System.out.println("Tiene de oro: "+oro);
                 System.out.println("Tiene de oro: " +oro);
-                for (int i = 0; i < arreglo.length; i++) {
+                for (int i = 0; i < jaulaPlayer.length; i++) {
                     System.out.println("Su equipo es: "+jaulaPlayer[i]);
                 }
         } else {
             for (int i = 0; i < jaulaPlayer.length; i++) {    
                 System.out.println("Su equipo es: "+jaulaPlayer[i]);
             }
-        }                   
-                                
-                
-            
+        }                               
     }
 
     public static void compraAnimalesRival(){
@@ -521,11 +517,11 @@ public class Util {
                         }
                     }
                 }
-                oro = oro-3;
+                oro = oro - 3;
             } while (oro >= 3);
             System.out.println("Tiene de oro: " +oro);
-            for (int i = 0; i < arreglo.length; i++) {
-                System.out.println("Su equipo es: "+jaulaPlayerRival[i]);
+            for (int i = 0; i < jaulaPlayerRival.length; i++) {
+                System.out.println("El equipo del rival es:  "+jaulaPlayerRival[i]);
             }
         } else {
             for (int i = 0; i < jaulaPlayerRival.length; i++) {    
@@ -533,6 +529,49 @@ public class Util {
             }
         }                   
     }
+
+    public static void ataque(){
+        System.out.println("******INICIA LA PELEA*****");
+        System.out.println();
+        for (int i = 0; i < Util.jaulaPlayer.length; i++) {
+            for (int j = 0; j < Util.jaulaPlayerRival.length; j++) {
+                if (Util.jaulaPlayer[0] != null && Util.jaulaPlayerRival[0] != null){
+                    Util.jaulaPlayer[0].setVida(Util.jaulaPlayerRival[0].getAtaque() - Util.jaulaPlayer[0].getVida());
+                    if (Util.jaulaPlayer[0].getVida() <= 0) {
+                        Util.jaulaPlayer[0].setVida(0);
+                        Util.jaulaPlayer[0].setEstado(false);
+                    }
+                    // Boolean Cuando termine la pelea todos vivos
+                    //Atributo vivo o muerto si este animal 0 Se muere YA pasaria a la posicion de 1 del arreglo 
+                } else{
+                    // System.out.println("No hay nadie en tu equipo PUNIETAS");
+                }
+            }
+        }
+        System.out.println("Ataca el animal" + Util.jaulaPlayer[0]);
+        System.out.println("Su vida es" +jaulaPlayer[0].getVida()+"Estamos luchando animo");
+    }
+    
+    public static void contraAtaque(){
+        System.out.println("El rival ataca");
+        System.out.println();
+        
+                if (jaulaPlayerRival[0+1] != null && jaulaPlayer[0] != null) {
+                    Util.jaulaPlayerRival[0].setVida(Util.jaulaPlayer[0].getAtaque() - Util.jaulaPlayerRival[0].getVida());
+                    if(Util.jaulaPlayerRival[0].getVida() <= 0){
+                        Util.jaulaPlayerRival[0].setVida(0);
+                        Util.jaulaPlayerRival[0].setEstado(false);    
+                    }
+                    
+                }else {
+                    System.out.println("No hay pelea. Rayos yo queria ver golpes");
+                }
+                
+        System.out.println(jaulaPlayerRival[0]+" El principal ataco");
+    }
+
+
+
     public static int generarNumeroRandom(int min, int max) {
         // int tmp = random.nextInt(max-min)+min;
         // System.out.println(tmp);
