@@ -1,17 +1,10 @@
 package ipc1.game.animal.tier1;
 
+import ipc1.game.animal.tipos.*;
 import ipc1.game.animal.Animal;
 
 public class Escarabajo extends Animal {
     public Escarabajo(){
-        super(7, "Escarabajo", 2, 3, true);
+        super(7, "Escarabajo", 2, 3, true, new Insecto(), null);
     }
-    public Escarabajo(int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
-        super(7, "Escarabajo", 2, 3, true);
-    }
-
-    @Override
-  public int getModDefense(Animal vida){
-      return 3;
-  }
 }

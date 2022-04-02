@@ -1,38 +1,47 @@
 package ipc1.game.animal;
 
+import ipc1.game.animal.tipos.Tipos;
 
-public abstract class Animal implements Cloneable{
+
+public abstract class Animal {
     private String nombreAnimal;
     private int ataque, vida, id;
     private boolean estadoVida;
+    public Tipos tipo1, tipo2;
+    
+    //public enum Tipo {insecto, terrestre, acuatico, volador, mamifero, domestico, solitario, desertico, reptil};
+    // Grillo (tipo.insecto, terreste)
+
 
 
     public Animal(){
-    
+        
     }
-
-    public Animal (int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
+    
+    public Animal (int id, String nombreAnimal, int ataque, int vida, boolean estadoVida, Tipos tipo1, Tipos tipo2){
         this.id = id;
         this.nombreAnimal = nombreAnimal;
         this.ataque = ataque;
         this.vida = vida;
         this.estadoVida = estadoVida;
+        this.tipo1 = tipo1;
+        this.tipo2 = tipo2;
     }
- 
     
-    abstract public int getModDefense(Animal ataque);
+    
    
     // abstract public int geAttack(Animal attack);
    // abstract public int getModDefense(Animal attack);
    //Generar instanceof para cada animal si es mamifero true o false
 
-   @Override
+@Override
    public String toString(){
         return " " + 
         "El id del animal es " + getId() + "'" +
         " El animal es " + getNombreAnimal() + "'" +
         " Tiene de ataque " + getAtaque() + "'" + 
         " Y de vida tiene " + getVida() ;
+        
    }
 
    public void defense(Animal p1){
@@ -90,5 +99,5 @@ public abstract class Animal implements Cloneable{
 
     public boolean getEstado(){
         return this.estadoVida;
-    }
+    }    
 }

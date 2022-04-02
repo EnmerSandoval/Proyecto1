@@ -1,16 +1,10 @@
 package ipc1.game.animal.tier3;
 
+import ipc1.game.animal.tipos.*;
 import ipc1.game.animal.Animal;
 
 public class Buho  extends Animal{
     public Buho(){
-        super(26, "Buho", 5, 3, true);
+        super(26, "Buho", 5, 3, true, new Volador(), new Solitario());
     }
-    public Buho(int id, String nombreAnimal, int ataque, int vida, boolean estadoVida){
-        super(26, "Buho", 5, 3, true);
-    }
-    @Override
-  public int getModDefense(Animal vida){
-      return 3;
-  }
 }

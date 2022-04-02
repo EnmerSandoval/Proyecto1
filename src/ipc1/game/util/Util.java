@@ -511,8 +511,8 @@ public class Util {
                 for (int i = 0; i < jaulaPlayerRival.length; i++) {
                     for (int j = 0; j < jaulaTemporal3.length; j++) {
                         if (seleccion == j) {
-                            if(jaulaPlayerRival[0] == null){
-                                jaulaPlayerRival[0] = jaulaTemporal3[0]; 
+                            if(jaulaPlayerRival[i] == null){
+                                jaulaPlayerRival[i] = jaulaTemporal3[0]; 
                             }
                         }
                     }
@@ -555,12 +555,11 @@ public class Util {
     public static void contraAtaque(){
         System.out.println("El rival ataca");
         System.out.println();
-        
                 if (jaulaPlayerRival[0+1] != null && jaulaPlayer[0] != null) {
                     Util.jaulaPlayerRival[0].setVida(Util.jaulaPlayer[0].getAtaque() - Util.jaulaPlayerRival[0].getVida());
                     if(Util.jaulaPlayerRival[0].getVida() <= 0){
-                        Util.jaulaPlayerRival[0].setVida(0);
-                        Util.jaulaPlayerRival[0].setEstado(false);    
+                        Util.jaulaPlayerRival[0].setVida(0);  
+                        Util.jaulaPlayerRival[0].setEstado(false);  
                     }
                     
                 }else {
