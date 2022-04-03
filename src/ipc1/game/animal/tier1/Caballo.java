@@ -8,6 +8,4 @@ public class Caballo extends Animal {
     public Caballo() {
         super(5, "Caballo", 2, 1, true, new Mamifero(), new Domestico());
     }
-    
-    
 }

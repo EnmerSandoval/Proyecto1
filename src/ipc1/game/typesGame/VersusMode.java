@@ -1,7 +1,7 @@
 package ipc1.game.typesGame;
 
 import ipc1.game.gameMechanism.SubMenu;
-import ipc1.game.util.Util;
+import ipc1.game.util.Jaula;
 
 public class VersusMode {
     private int oroVersus = 10;
@@ -10,18 +10,19 @@ public class VersusMode {
     private int rondas = 1;
 
     public VersusMode(){
-        versusFunction();
+        
     }
 
     public void versusFunction(){
         SubMenu sub = new SubMenu();
-
-        sub.texto();
-        Util.generarJaula(rondas);
-        Util.compraAnimales();
-        Util.generarJaula(rondas);
-        Util.compraAnimalesRival();
-        Util.ataque();
-        Util.contraAtaque();
+        Jaula.generarJaula(rondas);
+        Jaula.llenadoPlayer(rondas);
+        System.out.println();
+        System.out.println("Player 2");
+        Jaula.generarJaula(rondas);
+        Jaula.compraAnimalesRival();
+        Jaula.ataque();
+        Jaula.contraAtaque();
+        rondas = rondas + 1;
     }
 }

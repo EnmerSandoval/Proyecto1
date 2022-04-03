@@ -4,19 +4,20 @@ import ipc1.game.util.*;
 import ipc1.game.Game;
 import ipc1.game.typesGame.*;
 
-
 public class Menu {
-    //ModoArena modoArena = new ModoArena();
-    //ModoCreativo modoCreativo = new ModoCreativo();
-    //ModoArena modoArena = new ModoArena();
-    
+
     Game game = new Game();
-    public Menu (){
+
+    public Menu() {
+        textoMenu();
         eleccion();
-        
     }
-    
-    public static void textoMenu(){
+
+    CreativeMode creative = new CreativeMode();
+    ArenaMode arena = new ArenaMode();
+    VersusMode versus = new VersusMode();
+
+    public static void textoMenu() {
         System.out.println("*****SUPER AUTO PETS*****");
         System.out.println("*****BIENVENIDO USUARIO*****");
         System.out.println("1.) Modo de juego Arena");
@@ -25,13 +26,9 @@ public class Menu {
         System.out.println("4.) Salir");
     }
 
-    public void eleccion(){
-        CreativeMode creative = new CreativeMode();
-        ArenaMode arena = new ArenaMode();
-        VersusMode versus = new VersusMode();
+    public void eleccion() {
         int opcionMenu = 0;
         while (opcionMenu != 4) {
-            textoMenu();
             opcionMenu = Util.solicitarNumero("Ingrese la opcion que desea.", 1, 4);
             switch (opcionMenu) {
                 case 1:
@@ -47,8 +44,8 @@ public class Menu {
                     System.out.println("Hasta la proxima");
                     break;
             }
-            
+
         }
     }
-    
+
 }

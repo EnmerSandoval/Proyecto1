@@ -1,5 +1,6 @@
 package ipc1.game.gameMechanism;
 
+import ipc1.game.util.Jaula;
 import ipc1.game.util.Util;
 
 public class GameOperation {
@@ -14,7 +15,7 @@ public class GameOperation {
 
     public void modeVersus(int p2){
        if (oro > 2){
-           Util.compraAnimales();
+      //     Jaula.compraAnimales();
        }
     }
 
