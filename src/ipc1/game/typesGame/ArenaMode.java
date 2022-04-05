@@ -1,7 +1,5 @@
 package ipc1.game.typesGame;
 
-import ipc1.game.util.Util;
-
 public class ArenaMode {
     public ArenaMode(){
 
