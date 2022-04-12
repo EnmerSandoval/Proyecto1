@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Zorro extends Animal {
     public Zorro(){
-        super(14, "Zorro", 5, 2, true, new Solitario(), new Terrestre());
+        super(14, "Zorro", 5, 2, 1, true, new Solitario(), new Terrestre());
     }
 }

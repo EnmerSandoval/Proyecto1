@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Buho  extends Animal{
     public Buho(){
-        super(26, "Buho", 5, 3, true, new Volador(), new Solitario());
+        super(26, "Buho", 5, 3, 1, true, new Volador(), new Solitario());
     }
 }

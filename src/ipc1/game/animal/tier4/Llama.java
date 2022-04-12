@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Llama extends Animal {
     public Llama(){
-        super(34, "Llama", 3, 6, true, new Terrestre(), null);
+        super(34, "Llama", 3, 6, 1, true, new Terrestre(), null);
     }
 }

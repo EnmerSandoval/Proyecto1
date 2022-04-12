@@ -5,7 +5,7 @@ import ipc1.game.animal.Animal;
 
 public class Dodo extends Animal {
     public Dodo(){
-        super(9, "Dodo", 2, 3, true, new Volador(), null);
+        super(9, "Dodo", 2, 3, 1, true, new Volador(), null);
     }
 
 }

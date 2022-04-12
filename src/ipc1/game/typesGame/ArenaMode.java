@@ -1,5 +1,6 @@
 package ipc1.game.typesGame;
 
+
 public class ArenaMode {
     public ArenaMode(){
 
@@ -7,7 +8,7 @@ public class ArenaMode {
 
     public void arenaFunction(){
         
-        System.out.println("HI");
+        
 
         /* 
             LE doy la bienvenida

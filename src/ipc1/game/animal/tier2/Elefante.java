@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Elefante extends Animal {
     public Elefante(){
-        super(10, "Elefante", 3, 5, true, new Mamifero(), new Terrestre());
+        super(10, "Elefante", 3, 5, 1, true, new Mamifero(), new Terrestre());
     }
 }

@@ -5,7 +5,7 @@ import ipc1.game.animal.tipos.*;
 
 public class Aranya extends Animal {
     public Aranya(){
-        super(15, "Arania", 2, 2, true, new Insecto(), null);
+        super(15, "Arania", 2, 2, 1, true, new Insecto(), null);
     }
 
 }

@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Conejo extends Animal {
     public Conejo(){
-        super(22, "Conejo", 3, 2, true, new Mamifero(), null);
+        super(22, "Conejo", 3, 2, 1, true, new Mamifero(), null);
     }
 }

@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Ballena extends Animal {
     public Ballena(){
-        super(32, "Ballena", 3, 8, true, new Acuatico(), null);
+        super(32, "Ballena", 3, 8, 1, true, new Acuatico(), null);
     }
 }

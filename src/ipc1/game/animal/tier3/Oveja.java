@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Oveja extends Animal {
     public Oveja(){
-        super(21, "Oveja", 2, 2, true, new Domestico(), new Terrestre());
+        super(21, "Oveja", 2, 2, 1, true, new Domestico(), new Terrestre());
     }
 }

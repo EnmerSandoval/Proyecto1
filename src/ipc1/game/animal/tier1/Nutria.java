@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Nutria extends Animal {
     public Nutria(){
-        super(6, "Nutria", 1, 2, true, new Mamifero(), null);
+        super(6, "Nutria", 1, 2, 1, true, new Mamifero(), null);
     }
 }

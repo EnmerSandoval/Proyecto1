@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class PuercoEspin extends Animal {
     public PuercoEspin(){
-        super(11, "Puerco Espin", 3, 2, true, new Solitario(), new Terrestre());
+        super(11, "Puerco Espin", 3, 2, 1, true, new Solitario(), new Terrestre());
     }
 }

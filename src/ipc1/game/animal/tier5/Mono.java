@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Mono extends Animal {
     public Mono(){
-        super(39, "Mono", 1, 2, true, new Mamifero(), null);
+        super(39, "Mono", 1, 2, 1, true, new Mamifero(), null);
     }   
 }

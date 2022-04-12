@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Mapache extends Animal {
     public Mapache(){
-        super(17, "Mapache", 5, 4, true, new Solitario(), null);
+        super(17, "Mapache", 5, 4, 1, true, new Solitario(), null);
     }
 }

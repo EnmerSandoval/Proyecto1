@@ -10,13 +10,10 @@ public class VersusMode {
     }
 
     public void versusFunction(){
-        //Jaula.generarJaula(rondas);
-        //Jaula.llenadoPlayer(rondas);
-        //System.out.println();
+        
         //System.out.println("Player 2");
         //Jaula.generarJaula(rondas);
         //Jaula.llenadoPlayerRival(rondas);
-        
         Jaula.ataque(rondas);
     }
 }

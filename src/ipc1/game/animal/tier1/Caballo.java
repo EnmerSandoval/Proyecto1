@@ -6,6 +6,8 @@ import ipc1.game.animal.tipos.*;
 public class Caballo extends Animal {
 
     public Caballo() {
-        super(5, "Caballo", 2, 1, true, new Mamifero(), new Domestico());
+        super(5, "Caballo", 2, 1, 1, true, new Mamifero(), new Domestico());
     }
+
+
 }

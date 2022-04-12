@@ -2,7 +2,7 @@ package ipc1.game.animal;
 
 import ipc1.game.animal.tipos.Tipos;
 
-public abstract class Animal {
+public abstract class Animal implements Cloneable {
     private String nombreAnimal;
     private int ataque, vida, id;
     private boolean estadoVida;
@@ -16,7 +16,7 @@ public abstract class Animal {
 
     }
 
-    public Animal(int id, String nombreAnimal, int ataque, int vida, boolean estadoVida, Tipos tipo1, Tipos tipo2) {
+    public Animal(int id, String nombreAnimal, int ataque, int vida, double nivel, boolean estadoVida, Tipos tipo1, Tipos tipo2) {
         this.id = id;
         this.nombreAnimal = nombreAnimal;
         this.ataque = ataque;
@@ -39,11 +39,9 @@ public abstract class Animal {
     @Override
     public String toString() {
         return " " +
-                "El id del animal es " + getId() + "'" +
-                " El animal es " + getNombreAnimal() + "'" +
-                " Tiene de ataque " + getAtaque() + "'" +
-                " Y de vida tiene " + getVida();
-
+                "" + getNombreAnimal() + "'" +
+                "  ataque " + getAtaque() + "'" +
+                " vida " + getVida();
     }
 
     public void defense(Animal p1) {
@@ -55,7 +53,6 @@ public abstract class Animal {
         if (p1.getVida() >= 0) {
             System.out.println("el animal murio" + p1.getNombreAnimal());
         }
-
     }
 
     // public void attack(Animal p2){
@@ -103,4 +100,15 @@ public abstract class Animal {
     public boolean getEstado() {
         return this.estadoVida;
     }
+
+     @Override
+     public Object clone(){
+         Object clone = null;
+         try {
+             clone = super.clone();
+         }catch (CloneNotSupportedException e){
+             System.err.println("No se pudo clonar el objeto");
+         }
+         return clone;
+     }
 }

@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Buey extends Animal {
     public Buey(){
-        super(24, "Buey", 1, 4, true, new Mamifero(), null);
+        super(24, "Buey", 1, 4, 1, true, new Mamifero(), null);
     }
 }

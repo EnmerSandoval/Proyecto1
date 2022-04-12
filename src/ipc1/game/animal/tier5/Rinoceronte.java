@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Rinoceronte extends Animal {
     public Rinoceronte(){
-        super(38, "Rinoceronte", 5, 8, true, new Desertico(), new Terrestre());
+        super(38, "Rinoceronte", 5, 8, 1, true, new Desertico(), new Terrestre());
     }
 }

@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Delfin extends Animal {
     public Delfin(){
-        super(30, "Delfin", 4, 6, true, new Acuatico(), null);
+        super(30, "Delfin", 4, 6, 1, true, new Acuatico(), null);
     }
 }

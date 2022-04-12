@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Camello extends Animal {
     public Camello(){
-        super(16,"Camello", 2, 5, true, new Mamifero(), new Desertico());
+        super(16,"Camello", 2, 5, 1, true, new Mamifero(), new Desertico());
     }
 }

@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Cocodrilo extends Animal {
     public Cocodrilo(){
-        super(40, "Cocodrilo", 8, 4, true, new Reptil(), new Solitario());
+        super(40, "Cocodrilo", 8, 4, 1, true, new Reptil(), new Solitario());
     }
 }

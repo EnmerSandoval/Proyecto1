@@ -6,6 +6,7 @@ import ipc1.game.animal.Animal;
 
 public class Castor extends Animal {
     public Castor(){
-        super(4, "Castor", 2, 2, true, new Terrestre(), new Acuatico());
+        super(4, "Castor", 2, 2, 1, true, new Terrestre(), new Acuatico());
     }
+  
 }

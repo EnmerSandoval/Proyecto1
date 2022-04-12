@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class PavoReal extends Animal {
     public PavoReal(){
-        super(12, "Pavo Real", 2, 5, true, new Domestico(), new Volador());
+        super(12, "Pavo Real", 2, 5, 1, true, new Domestico(), new Volador());
     }
 }

@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Lobo extends Animal {
     public Lobo(){
-        super(23, "Lobo", 3, 4, true, new Solitario(), new Terrestre());
+        super(23, "Lobo", 3, 4, 1, true, new Solitario(), new Terrestre());
     }
 }

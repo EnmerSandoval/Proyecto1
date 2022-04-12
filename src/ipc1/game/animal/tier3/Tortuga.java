@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Tortuga extends Animal {
     public Tortuga(){
-        super(19, "Tortuga", 1, 2, true, new Reptil(), null);
+        super(19, "Tortuga", 1, 2, 1, true, new Reptil(), null);
     }
 }

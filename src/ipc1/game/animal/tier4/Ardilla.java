@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Ardilla extends Animal {
     public Ardilla(){
-        super(33, "Ardilla", 2, 5, true, new Domestico(), null);
+        super(33, "Ardilla", 2, 5, 1, true, new Domestico(), null);
     }  
 }

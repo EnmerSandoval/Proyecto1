@@ -5,6 +5,6 @@ import ipc1.game.animal.Animal;
 
 public class Hipopotamo extends Animal {
     public Hipopotamo(){
-        super(29, "Hipopotamo", 4, 7, true, new Acuatico(), new Terrestre());
+        super(29, "Hipopotamo", 4, 7, 1, true, new Acuatico(), new Terrestre());
     }
 }
