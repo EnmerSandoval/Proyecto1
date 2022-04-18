@@ -5,6 +5,7 @@ import ipc1.game.animal.tipos.Tipos;
 public abstract class Animal implements Cloneable {
     private String nombreAnimal;
     private int ataque, vida, id;
+    private double nivel;
     private boolean estadoVida;
     public Tipos tipo1, tipo2;
 
@@ -16,21 +17,22 @@ public abstract class Animal implements Cloneable {
 
     }
 
-    public Animal(int id, String nombreAnimal, int ataque, int vida, double nivel, boolean estadoVida, Tipos tipo1, Tipos tipo2) {
+    public Animal(int id, String nombreAnimal, int ataque, int vida, double nivel, boolean estadoVida, Tipos tipo1,
+            Tipos tipo2) {
         this.id = id;
         this.nombreAnimal = nombreAnimal;
         this.ataque = ataque;
         this.vida = vida;
+        this.nivel = nivel;
         this.estadoVida = estadoVida;
         this.tipo1 = tipo1;
         this.tipo2 = tipo2;
     }
-    
+
     /* 
         
     
     */
-
 
     // abstract public int geAttack(Animal attack);
     // abstract public int getModDefense(Animal attack);
@@ -41,7 +43,8 @@ public abstract class Animal implements Cloneable {
         return " " +
                 "" + getNombreAnimal() + "'" +
                 "  ataque " + getAtaque() + "'" +
-                " vida " + getVida();
+                " vida " + getVida() +
+                " su nivel es: " + getNivel();
     }
 
     public void defense(Animal p1) {
@@ -60,6 +63,13 @@ public abstract class Animal implements Cloneable {
     // System.out.println(" "+this.getAnimal()+" ataca a "+p2.getAnimal());
     // int amount = this.getModAttack(p2);
     // }
+    public void setNivel(double nivel) {
+        this.nivel = nivel;
+    }
+
+    public double getNivel(){
+        return nivel;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -101,14 +111,14 @@ public abstract class Animal implements Cloneable {
         return this.estadoVida;
     }
 
-     @Override
-     public Object clone(){
-         Object clone = null;
-         try {
-             clone = super.clone();
-         }catch (CloneNotSupportedException e){
-             System.err.println("No se pudo clonar el objeto");
-         }
-         return clone;
-     }
+    @Override
+    public Object clone() {
+        Object clone = null;
+        try {
+            clone = super.clone();
+        } catch (CloneNotSupportedException e) {
+            System.err.println("No se pudo clonar el objeto");
+        }
+        return clone;
+    }
 }

@@ -12,7 +12,9 @@ import ipc1.game.gameMechanism.SubMenu;
 
 public class Jaula {
     public static Animal jaulaPlayer[] = new Animal[5];
+    public static Animal jaulaPlayerAtaque[] = new Animal[5];
     public static Animal jaulaPlayerRival[] = new Animal[5];
+    public static Animal jaulaPlayerRivalAtaque[] = new Animal[5];
     public static Animal jaulaTemporal[] = new Animal[5];
     public static Animal jaulaTemporal3[] = new Animal[3];
     public static Animal jaulaTemporal4[] = new Animal[4];
@@ -113,109 +115,11 @@ public class Jaula {
     }
 
     public static void llenadoPlayer(int rondas) {
-        int oro = 10, llenado = 0;
-        boolean errordeposicion = false;
-        Animal[] jaulaMientras = getSeleccionArray(rondas);
-        int opcion = Util.solicitarNumero("¿Desea comprar animales para su equipo? \n Si = 1, No = 2.", 1, 2);
-        do {
-            if (opcion == 1) {
-                int seleccion = Util.solicitarNumero(
-                        "Que animal desea comprar indique el animal conforme al indice que se le dio", 0,
-                        jaulaMientras.length - 1);
-                if (jaulaMientras[seleccion] != null) {
-                    do {
-                        try {
-                            llenado = Util.solicitarNumero("En que posicion de equipo quiere poner a su animal", 0,
-                                    jaulaPlayer.length - 1);
-                            if (jaulaPlayer[llenado] == null || (jaulaPlayer.getClass().equals(jaulaPlayer[llenado]))) {
-                                errordeposicion = false;
-                                jaulaPlayer[llenado] = jaulaMientras[seleccion];
-                                jaulaMientras[seleccion] = null;
-                                oro = oro - 3;
-                                System.out.println("\n Su equipo actualmente es: ");
-
-                                for (int i = 0; i < jaulaPlayer.length; i++) {
-                                    System.out.println(jaulaPlayer[i]);
-                                }
-                                System.out.println("Le quedan de oro: " + oro);
-                                int refrescar = Util.solicitarNumero("Desea refrescar la lista? \n Si = 1, No = 2", 1,
-                                        2);
-                                if (refrescar == 1) {
-                                    oro = oro - 1;
-                                    System.out.println("Le queda de oro: " + oro);
-                                    generarJaula(rondas);
-                                } else {
-                                    opcion = Util.solicitarNumero(
-                                            "¿Desea volver a comprar animales para su equipo? \n Si = 1, No = 2.",
-                                            1, 2);
-                                    for (int i = 0; i < jaulaMientras.length; i++) {
-                                        if (jaulaMientras[i] != null) {
-                                            System.out.println("Puede comprar los siguientes animales " + i + ""
-                                                    + jaulaMientras[i]);
-                                        }
-                                    }
-                                }
-                            } else {
-                                System.out.println("Ya existe un animal en esa posicion");
-                                System.out.println(
-                                        "Debe ingresar una posicion diferente o que sean el mismo animal, diferente de: "
-                                                + llenado);
-                                errordeposicion = true;
-                            }
-                        } catch (Exception e) {
-                            errordeposicion = true;
-                            llenado = Util.solicitarNumero("En que posicion de equipo quiere poner a su animal", 0,
-                                    jaulaPlayer.length - 1);
-                            if (jaulaPlayer[llenado] == null) {
-                                errordeposicion = false;
-                            }
-                        }
-
-                    } while (errordeposicion);
-                } else {
-                    System.out.println("Error no existe un animal en esa posicion.");
-                }
-                // DOnde compre en esa posicion mostrar correr los animales. Volver a mostrar el
-                // menu de la tienda que puedo si es diferente de null
-                // EL animal ya fue comprado antes jaula mientras [seleccion]
-                // MOSTRAR MENU ACTUALIZADO
-            } else {
-                for (int i = 0; i < jaulaPlayer.length; i++) {
-                    System.out.println("Es una lastima pero tu equipo es: " + i + "" + jaulaPlayer[i]);
-                }
-            }
-        } while (opcion != 2 && oro > 2);
+        compraAnimales(rondas, jaulaPlayer, jaulaPlayerAtaque);
     }
 
     public static void llenadoPlayerRival(int rondas) {
-        int oro = 10;
-        Animal[] jaulaRivalTMP = getSeleccionArray(rondas);
-        int opcionRival = Util.solicitarNumero("¿Desea comprar animales para su equipo? \n Si = 1, 2 = no.", 1, 2);
-        do {
-            if (opcionRival == 1) {
-                if (jaulaRivalTMP == null) {
-                    for (int i = 0; i < jaulaPlayerRival.length; i++) {
-                        System.out.println("No has comprado nada pero tu equipo es: " + i + "" + jaulaPlayerRival[i]);
-                    }
-                } else {
-                    int seleccionRival = Util.solicitarNumero(
-                            "Que animal desea comprar indique el animal conforme al indice que se le dio", 0,
-                            jaulaRivalTMP.length - 1);
-                    int llenadoRival = Util.solicitarNumero(
-                            "En que posicion de equipo quiere poner a su animal", 0, jaulaPlayerRival.length - 1);
-                    jaulaPlayerRival[llenadoRival] = jaulaRivalTMP[seleccionRival];
-                    System.out.println("Puede comprar los siguientes animales" + jaulaRivalTMP.length);
-                    oro = oro - 3;
-                    System.out.println("Le quedan de oro: " + oro);
-                    for (int i = 0; i < jaulaPlayerRival.length; i++) {
-                        System.out.println("El equipo del jugador es: " + jaulaPlayerRival[i]);
-                    }
-                    System.out.println("Le quedan de oro: " + oro);
-                    opcionRival = Util.solicitarNumero(
-                            "¿Desea volver a comprar animales para su equipo? \n Si = 1, No = 2.", 1, 2);
-                }
-            }
-        } while (opcionRival != 2 && oro >= 3);
+        compraAnimales(rondas, jaulaPlayerRival, jaulaPlayerRivalAtaque);
     }
 
     public static void ataque(int rondas) {
@@ -236,16 +140,27 @@ public class Jaula {
             llenadoPlayerRival(rondas);
             System.out.println();
             System.out.println("******INICIA LA PELEA*****");
-            for (int i = 0; i < Jaula.jaulaPlayer.length; i++) {
+            for (int i = 0; i < Jaula.jaulaPlayerAtaque.length; i++) {
                 for (int j = 0; j < Jaula.jaulaPlayerRival.length; j++) {
-                    if (Jaula.jaulaPlayer[i] != null && Jaula.jaulaPlayerRival[j] != null) {
-                        Jaula.jaulaPlayer[i]
-                                .setVida(Jaula.jaulaPlayerRival[j].getAtaque() - Jaula.jaulaPlayer[i].getVida());
-                        System.out.println("Ataca el animal " + Jaula.jaulaPlayer[i]);
-                        System.out.println("\n Su vida es " + jaulaPlayer[i].getVida() + " Estamos luchando animo");
-                        if (Jaula.jaulaPlayer[i].getVida() <= 0) {
-                            Jaula.jaulaPlayer[i].setVida(0);
-                            Jaula.jaulaPlayer[i].setEstado(false);
+                    if (Jaula.jaulaPlayerAtaque[i] != null && Jaula.jaulaPlayerRival[j] != null) {
+                        System.out.println("Ataca el animal " + Jaula.jaulaPlayerAtaque[i].getNombreAnimal());
+                        System.out.println(
+                                "Tiene de ataque " + Jaula.jaulaPlayerAtaque[i].getAtaque() + " y de vida tiene "
+                                        + Jaula.jaulaPlayerAtaque[i].getVida());
+                        Jaula.jaulaPlayerAtaque[i]
+                                .setVida(Jaula.jaulaPlayerAtaque[i].getVida() - Jaula.jaulaPlayerRival[j].getAtaque());
+                        if (Jaula.jaulaPlayerAtaque[i].getVida() <= 0) {
+                            Jaula.jaulaPlayerAtaque[i].setVida(0);
+                            Jaula.jaulaPlayerAtaque[i].setEstado(false);
+                        }
+                        System.out.println("\n Recibio de daño  " + jaulaPlayerRival[j].getAtaque()
+                                + " por lo tanto tiene de vida " + jaulaPlayer[i].getVida());
+                        if (Jaula.jaulaPlayerAtaque[i].getVida() > 0) {
+                            System.out.println(
+                                    "El animal " + jaulaPlayerAtaque[i].getNombreAnimal() + " vuelve a recibir daño");
+                            Jaula.jaulaPlayerAtaque[i]
+                                    .setVida(Jaula.jaulaPlayerAtaque[i].getVida()
+                                            - Jaula.jaulaPlayerRival[j].getAtaque());
                         }
                     }
                     // Boolean Cuando termine la pelea todos vivos Si el animal muere un nuevo
@@ -265,7 +180,7 @@ public class Jaula {
         // Cuando muera llamar al copyOfRange.@interface
         // Si la longitud es == 0 entonces el otro gano, o perdio.
 
-        // Arrays.copyOfRange(jaula, 2, 5)
+        // Arrays.copyOf(jaula, 2);
 
     }
 
@@ -283,9 +198,21 @@ public class Jaula {
                     }
                     System.out.println("Ataca " + jaulaPlayer[i]);
                     System.out.println(jaulaPlayerRival[j] + " El principal ataco");
-                } else {
-                    System.out.println("No existen animales en esta posicion");
                 }
+            }
+        }
+    }
+
+    public static void incrementaNivel(Animal[] mientras, int seleccion, int llenado) {
+        for (int i = 0; i < jaulaPlayer.length; i++) {
+            jaulaPlayer[llenado] = mientras[seleccion];
+            jaulaPlayer[llenado].setNivel(jaulaPlayer[llenado].getNivel() + 0.5);
+            System.out.println(
+                    "El nivel de: " + jaulaPlayer[llenado] + " es: " + jaulaPlayer[llenado].getNivel());
+            if (jaulaPlayer[llenado].getNivel() == 2) {
+                jaulaPlayer[llenado].setAtaque(jaulaPlayer[llenado].getAtaque() + 1);
+                jaulaPlayer[llenado].setVida(jaulaPlayer[llenado].getVida() + 1);
+                System.out.println("Se le sumo 1 de vida y 1 de ataque");
             }
         }
     }
@@ -298,6 +225,114 @@ public class Jaula {
             return jaulaTemporal4;
         }
         return jaulaTemporal;
+    }
+
+    public static void ventaAnimales(int rondas, Animal[] jaulaVacia, int oro) {
+        if (rondas > 1) {
+            int venta = Util.solicitarNumero("¿Desea vender algun animal de su equipo? \n Si = 1, No = 2.", 1, 2);
+            if (venta == 1) {
+                for (int i = 0; i < jaulaVacia.length; i++) {
+                    if (jaulaVacia[i] != null) {
+                        System.out.println(i + "" + jaulaVacia[i]);
+                    }
+                }
+                int ventaPos = Util.solicitarNumero("¿Que animal desea vender conforme al indice que se le dio?", 0,
+                        jaulaVacia.length - 1);
+                jaulaVacia[ventaPos] = null;
+                oro = oro + 1;
+                System.out.println("Vendio correctamente al jugador tiene de oro: " + oro);
+            }
+        }
+    }
+
+    public static void compraAnimales(int rondas, Animal[] jaulaRelleno, Animal[] jaulaAtaque) {
+        int oro = 10;
+        int llenado, opcion;
+        boolean errordeposicion;
+        Animal[] jaulaMientras = getSeleccionArray(rondas);
+        if (rondas == 1) {
+            opcion = Util.solicitarNumero("¿Desea comprar animales para su equipo? \n Si = 1, No = 2.", 1, 2);
+        } else {
+            opcion = Util.solicitarNumero("¿Desea comprar animales para su equipo o modificarlos? \n Si = 1, No = 2.",
+                    1, 2);
+        }
+       //  if (rondas > 1 && opcion == 1) {
+       //      ventaAnimales(rondas, jaulaRelleno, oro);
+       //  }
+        do {
+            if (opcion == 1) {
+                
+                int seleccion = Util.solicitarNumero(
+                    "Que animal desea comprar indique el animal conforme al indice que se le dio", 0,
+                    jaulaMientras.length - 1);
+                    if (jaulaMientras[seleccion] != null) {
+                        do {
+                            try {
+                                
+                                llenado = Util.solicitarNumero("En que posicion de equipo quiere poner a su animal", 0,
+                                jaulaRelleno.length - 1);
+                          //      opcion = Util.solicitarNumero("¿Desea comprar animales para su equipo? \n Si = 1, No = 2.", 1, 2);   
+                                if (jaulaRelleno[llenado] == null && oro > 0) {
+                                    errordeposicion = false;
+                                    jaulaRelleno[llenado] = (Animal) jaulaMientras[seleccion].clone();
+                                    jaulaMientras[seleccion] = null;
+                                    jaulaAtaque[llenado] = (Animal) jaulaRelleno[llenado].clone();
+                                      
+                                    oro = oro - 3;
+                                    System.out.println("Le quedan de oro: " + oro);
+                                    System.out.println("\n Su equipo actualmente es: ");
+                                    for (int i = 0; i < jaulaRelleno.length; i++) {
+                                        System.out.println(jaulaRelleno[i]);
+                                    }
+                                    int refrescar = Util.solicitarNumero("Desea refrescar la lista? \n Si = 1, No = 2",
+                                            1,
+                                            2);
+
+                                    if (refrescar == 1) {
+                                        if (oro > 0) {
+                                            oro = oro - 1;
+                                            System.out.println("Le queda de oro: " + oro);
+                                            generarJaula(rondas);
+                                        }
+                                    } else if (oro > 0) {
+                                        opcion = Util.solicitarNumero(
+                                                "¿Desea volver a comprar animales para su equipo? \n Si = 1, No = 2.",
+                                                1, 2);
+                                        for (int i = 0; i < jaulaMientras.length; i++) {
+                                            if (jaulaMientras[i] != null) {
+                                                System.out.println("Puede comprar los siguientes animales " + i + ""
+                                                        + jaulaMientras[i]);
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("Ya existe un animal en esa posicion");
+                                    System.out.println(
+                                            "Debe ingresar una posicion diferente o que sean el mismo animal, diferente de: "
+                                                    + llenado);
+                                    errordeposicion = true;
+                                }
+
+                            } catch (Exception e) {
+                                errordeposicion = true;
+                                llenado = Util.solicitarNumero("Error en que posicion de equipo quiere poner a su animal", 0,
+                                        jaulaRelleno.length - 1);
+                                if (jaulaRelleno[llenado] == null) {
+                                    errordeposicion = false;
+                                }
+                            }
+                        } while (errordeposicion);
+                    } else {
+                        System.out.println("Error no existe un animal en esa posicion.");
+                    }
+
+                }
+            } else if (rondas > 1) {
+                for (int i = 0; i < jaulaRelleno.length; i++) {
+                    System.out.println("Es una lastima pero tu equipo es: " + i + "" + jaulaRelleno[i]);
+                }   
+            }
+        } while (opcion != 2 && oro > 0);
     }
 
 }

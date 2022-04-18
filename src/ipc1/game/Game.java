@@ -5,6 +5,6 @@ import ipc1.game.gameMechanism.Menu;
 public class Game {
      public static void main(String[] args) {
           Menu menu = new Menu();
-          menu.eleccion();      
+          menu.eleccion();    
      } 
 }
