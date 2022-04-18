@@ -14,14 +14,5 @@ public class SubMenu {
        System.out.println("                                                                            Tiene " + oro +" de oro");
        System.out.println("                                                                            Tiene " + victorias +" victorias");
        
-       //int rondas = 8;
-        //Util.generarJaula(rondas);
-       //System.out.println("Ya se generaron los animales.");
-       // Util.compraAnimales();
-       //System.out.println("Usted si compro animales");
-       //Util.generarJaula(rondas);
-       //Util.compraAnimalesRival();
-       //Util.ataque();
-       //Util.contraAtaque();
     }  
 }

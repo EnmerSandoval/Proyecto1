@@ -43,8 +43,7 @@ public abstract class Animal implements Cloneable {
         return " " +
                 "" + getNombreAnimal() + "'" +
                 "  ataque " + getAtaque() + "'" +
-                " vida " + getVida() +
-                " su nivel es: " + getNivel();
+                " vida " + getVida() ;
     }
 
     public void defense(Animal p1) {

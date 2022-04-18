@@ -254,11 +254,11 @@ public class Jaula {
             opcion = Util.solicitarNumero("¿Desea comprar animales para su equipo? \n Si = 1, No = 2.", 1, 2);
         } else {
             opcion = Util.solicitarNumero("¿Desea comprar animales para su equipo o modificarlos? \n Si = 1, No = 2.",
-                    1, 2);
+            1, 2);
         }
-       //  if (rondas > 1 && opcion == 1) {
-       //      ventaAnimales(rondas, jaulaRelleno, oro);
-       //  }
+        //  if (rondas > 1 && opcion == 1) {
+            //      ventaAnimales(rondas, jaulaRelleno, oro);
+            //  }
         do {
             if (opcion == 1) {
                 
@@ -271,7 +271,6 @@ public class Jaula {
                                 
                                 llenado = Util.solicitarNumero("En que posicion de equipo quiere poner a su animal", 0,
                                 jaulaRelleno.length - 1);
-                          //      opcion = Util.solicitarNumero("¿Desea comprar animales para su equipo? \n Si = 1, No = 2.", 1, 2);   
                                 if (jaulaRelleno[llenado] == null && oro > 0) {
                                     errordeposicion = false;
                                     jaulaRelleno[llenado] = (Animal) jaulaMientras[seleccion].clone();
@@ -288,6 +287,11 @@ public class Jaula {
                                             1,
                                             2);
 
+
+
+
+
+                                            
                                     if (refrescar == 1) {
                                         if (oro > 0) {
                                             oro = oro - 1;
@@ -326,13 +330,13 @@ public class Jaula {
                         System.out.println("Error no existe un animal en esa posicion.");
                     }
 
-                }
-            } else if (rondas > 1) {
+                
+            } else  {
                 for (int i = 0; i < jaulaRelleno.length; i++) {
                     System.out.println("Es una lastima pero tu equipo es: " + i + "" + jaulaRelleno[i]);
                 }   
             }
-        } while (opcion != 2 && oro > 0);
-    }
+        }while(opcion!=2&&oro>0);
+}
 
 }

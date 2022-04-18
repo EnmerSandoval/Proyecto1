@@ -6,6 +6,6 @@ public class CreativeMode {
     }
 
     public void creativeFunction(){
-        System.out.println("creative por que estoy acá.");
+        
     }
 }
