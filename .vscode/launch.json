@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Game",
+            "request": "launch",
+            "mainClass": "ipc1.game.Game",
+            "projectName": "PROYECTO_bca49255"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

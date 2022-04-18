@@ -169,6 +169,7 @@ public class Jaula {
                     // | mueve todos los otros animales.
                     // 1 del arreglo
                     /* */
+                    contraAtaque();
                 }
             }
             rondas = rondas + 1;
@@ -269,7 +270,7 @@ public class Jaula {
                         do {
                             try {
                                 
-                                llenado = Util.solicitarNumero("En que posicion de equipo quiere poner a su animal", 0,
+                                llenado = Util.solicitarNumero("En que posicion de equipo quiere poner a su animal de [0..4]", 0,
                                 jaulaRelleno.length - 1);
                                 if (jaulaRelleno[llenado] == null && oro > 0) {
                                     errordeposicion = false;
